@@ -9,3 +9,5 @@
 * error
 
 * close
+
+实例方法
