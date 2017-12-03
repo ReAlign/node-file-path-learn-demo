@@ -1,9 +1,9 @@
 const fs = require('fs');
 let count = 0;
 
-let fsWatchClose = () => {
+let fsWatchClose = (FsW) => {
   console.log('关闭');
-  fsWatcher.close((err) => {
+  FsW.close((err) => {
     if(err) {
       console.error(err);
     }
@@ -18,7 +18,7 @@ let fsWatcher = fs.watch('./t.txt', (eventType, filename) => {
     console.log(filename);
     count++;
     if(count > 1) {
-      fsWatchClose();
+      fsWatchClose(fsWatcher);
     }
   }
 });
