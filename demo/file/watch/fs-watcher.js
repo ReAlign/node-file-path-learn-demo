@@ -13,6 +13,7 @@ let fsWatchClose = (FsW) => {
 };
 
 let fsWatcher = fs.watch('./t.txt', (eventType, filename) => {
+  // 事件类型
   console.log(eventType);
   if (filename) {
     console.log(filename);
