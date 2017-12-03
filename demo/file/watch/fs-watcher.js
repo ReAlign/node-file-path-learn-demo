@@ -7,6 +7,7 @@ let fsWatchClose = () => {
     if(err) {
       console.error(err);
     }
+    // 似乎调不到？
     console.log('关闭watch');
   });
 };
