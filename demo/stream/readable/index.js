@@ -3,7 +3,6 @@ const Readable = require('stream').Readable;
 // Stream 实现
 class MyReadable extends Readable {
     constructor(dataSource, options) {
-        debugger
         super(options);
         this.dataSource = dataSource;
     }
