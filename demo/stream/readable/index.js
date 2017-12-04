@@ -4,6 +4,7 @@ const Readable = require('stream').Readable;
 class MyReadable extends Readable {
     constructor(dataSource, options) {
         super(options);
+        this.count = 0;
         this.dataSource = dataSource;
     }
     // 继承了 Readable 的类必须实现这个函数
@@ -11,6 +12,8 @@ class MyReadable extends Readable {
     _read() {
         const data = this.dataSource.makeData();
         this.push(data);
+        this.count++;
+        console.log(data, this.count);
     }
 }
 
@@ -29,3 +32,5 @@ myReadable.setEncoding('utf8');
 myReadable.on('data', (chunk) => {
     console.log(chunk);
 });
+
+// console.log(myReadable._read());
